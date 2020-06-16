@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yotop.aipc.dao.AiCmmdataMapper">
+  <resultMap id="BaseResultMap" type="com.yotop.aipc.model.AiCmmdata">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="C_ID" jdbcType="INTEGER" property="cId" />
+    <result column="C_P_ID" jdbcType="INTEGER" property="cPId" />
+    <result column="C_FIGUER" jdbcType="VARCHAR" property="cFiguer" />
+    <result column="C_ISFIG" jdbcType="VARCHAR" property="cIsfig" />
+    <result column="C_ITEM" jdbcType="VARCHAR" property="cItem" />
+    <result column="C_PARTNUMBER" jdbcType="VARCHAR" property="cPartnumber" />
+    <result column="C_TIER" jdbcType="INTEGER" property="cTier" />
+    <result column="C_NOMENCLATURE" jdbcType="VARCHAR" property="cNomenclature" />
+    <result column="C_EDDCODE" jdbcType="VARCHAR" property="cEddcode" />
+    <result column="C_UPA" jdbcType="VARCHAR" property="cUpa" />
+    <result column="C_CON" jdbcType="INTEGER" property="cCon" />
+    <result column="C_UPDATEDATE" jdbcType="VARCHAR" property="cUpdatedate" />
+    <result column="C_UPDATEPERSON" jdbcType="VARCHAR" property="cUpdateperson" />
+  </resultMap>
+</mapper>

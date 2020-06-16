@@ -1,0 +1,85 @@
+#主配置文件
+spring:
+  application:
+    name: aipc
+  profiles:
+    active: dev #设置哪个配置文件生效
+  cloud:
+    config:
+      enabled: true
+  aop:
+    proxy-target-class: true
+
+##httpclient连接池配置
+httpclient:
+  #是否启用
+  enabled: true
+  #最大连接数
+  max-total: 200
+  #并发数
+  default-max-per-route: 40
+  #创建连接的最长时间
+  connect-timeout: 10000
+  #从连接池中获取到连接的最长时间
+  connection-request-timeout: 500
+  #数据传输的最长时间
+  socket-timeout: 10000
+  #提交请求前测试连接是否可用
+  stale-connection-check-enabled: true
+
+##swagger文档,可配置多个分组
+swagger:
+  groups:
+    - title: ${spring.application.name} API
+      description: ${spring.application.name} API
+      creator: ${spring.application.name}
+      version: 1.0.0
+      ##只能扫描实现类所在包
+      base-package: com.yotop.fams.control
+      group-name: defalut
+
+##mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.yotop.aipc.model
+  configuration:
+    mapUnderscoreToCamelCase: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mapper:
+  mappers:
+    - tk.mybatis.mapper.common.Mapper
+  notEmpty: true
+pagehelper:
+  helper-dialect: SqlServer
+  reasonable: true
+  page-size-zero: true
+  support-methods-arguments: true
+  params: count=countSql
+##熔断器
+feign:
+  hystrix:
+    enabled: false
+
+##fegin调用必须设置
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+
+management:
+  security:
+    enabled: false
+
+logging:
+  file: ${spring.application.name}
+  config: classpath:log4j2.xml
+  register-shutdown-hook: true
+  level:
+    root: debug
+
+token:
+   key: yotop
+
+

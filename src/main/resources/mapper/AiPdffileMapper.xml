@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yotop.aipc.dao.AiPdffileMapper">
+  <resultMap id="BaseResultMap" type="com.yotop.aipc.model.AiPdffile">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="P_ID" jdbcType="INTEGER" property="pId" />
+    <result column="P_FILENAME" jdbcType="VARCHAR" property="pFilename" />
+    <result column="P_REALNAME" jdbcType="VARCHAR" property="pRealname" />
+    <result column="P_SUBMITDATE" jdbcType="VARCHAR" property="pSubmitdate" />
+    <result column="P_SUBMITPERSON" jdbcType="VARCHAR" property="pSubmitperson" />
+    <result column="P_ISCHANGESUCCESS" jdbcType="INTEGER" property="pIschangesuccess" />
+  </resultMap>
+</mapper>

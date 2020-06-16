@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yotop.aipc.dao.AiUserMapper">
+  <resultMap id="BaseResultMap" type="com.yotop.aipc.model.AiUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="U_ID" jdbcType="INTEGER" property="uId" />
+    <result column="U_NAME" jdbcType="VARCHAR" property="uName" />
+    <result column="U_PASSWORD" jdbcType="VARCHAR" property="uPassword" />
+  </resultMap>
+    <select id="selectTest" resultType="com.yotop.aipc.model.AiUser">
+      SELECT * FROM ai_user au WHERE au.`U_ID` = 1
+    </select>
+</mapper>

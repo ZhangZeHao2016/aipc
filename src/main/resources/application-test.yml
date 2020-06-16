@@ -1,0 +1,25 @@
+#测试环境配置
+server:
+  port: 8080 #当server.ssl.enabled=true时,此端口为https端口,反之则为http端口
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    username: root
+    password: 1234
+    url: jdbc:mysql://127.0.0.1:3306/spichrpro0507?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      max-active: 30
+      min-idle: 5
+      validation-query: SELECT 1 FROM DUAL
+      max-wait: 10000
+      min-evictable-idle-time-millis: 30000
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
